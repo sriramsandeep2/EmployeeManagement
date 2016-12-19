@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>TrainingExample</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<context-param>
+		<param-name>DRIVER_NAME</param-name>
+		<param-value>com.mysql.jdbc.Driver</param-value>
+	</context-param>
+	<context-param>
+		<param-name>DB_URL</param-name>
+		<param-value>jdbc:mysql://localhost:3306/sriram</param-value>
+	</context-param>
+	<context-param>
+		<param-name>DB_NAME</param-name>
+		<param-value>root</param-value>
+	</context-param>
+	<context-param>
+		<param-name>DB_PASSWORD</param-name>
+		<param-value>root</param-value>
+	</context-param>
+	
+		<servlet>
+		<servlet-name>GenericServlet</servlet-name>
+		<servlet-class>com.trainingExample.controller.GenericSer</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GenericServlet</servlet-name>
+		<url-pattern>/GenericServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Register</servlet-name>
+		<servlet-class>com.trainingExample.controller.RegisterEmployeeController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Register</servlet-name>
+		<url-pattern>/Register</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Search</servlet-name>
+		<servlet-class>com.trainingExample.controller.SearchEmployeeController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Search</servlet-name>
+		<url-pattern>/Search</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>com.trainingExample.controller.Login</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/Login</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Delete</servlet-name>
+		<servlet-class>com.trainingExample.controller.DeleteEmployeeController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Delete</servlet-name>
+		<url-pattern>/Delete</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Update</servlet-name>
+		<servlet-class>com.trainingExample.controller.UpdateEmployeeController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Update</servlet-name>
+		<url-pattern>/Update</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Update1</servlet-name>
+		<servlet-class>com.trainingExample.controller.UpdateEmployeeController1</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Update1</servlet-name>
+		<url-pattern>/Update1</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ViewAll</servlet-name>
+		<servlet-class>com.trainingExample.controller.ViewAllController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ViewAll</servlet-name>
+		<url-pattern>/ViewAll</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<filter-name>user</filter-name>
+		<filter-class>com.trainingExample.controller.LoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>user</filter-name>
+		<url-pattern>/Login</url-pattern>
+	</filter-mapping>
+</web-app>
